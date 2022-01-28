@@ -25,10 +25,21 @@ python ConanData.py
 
 出来上がったデータセットがConanData.jsonです。
 
+また、ConanData.jsonから作成したcsvデータがdataset_csvにあります。
+
 # FileTitle.py
 
-各話の通算話数、掲載巻数、File番号、事件名、タイトルのデータセットVolume-Index-Title.csvを取得できます。
+各話の通算話数、掲載巻数、File番号、事件名、タイトルのデータセットVolume-Index-Case-Title.csvを取得できます。
 
 # Case.py
 
-各事件の通算事件数、事件数、説明文が読めます。
+各事件の通算事件数、事件数、説明文が読めるNumber-Title-Explain.csvが取得できます。
+
+# MainCharacter.py GuestCharacter.py
+
+編纂室においての事件ごとのメインキャラ、ゲストキャラの一覧表である
+Title-MainCharacter.csvとTitle-GuestCharacter.csvが取得できます。
+
+# Place.py
+
+事件が起こった場所のデータセットTitle-Place.csvが取得できます。
