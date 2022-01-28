@@ -3,4 +3,5 @@
 
 # 利用に関する注意
 著作権等は以下のサイトで確認してください。
-[画像使用・著作権](https://www.shogakukan.co.jp/picture)
+
+[画像使用・著作権 | 小学館](https://www.shogakukan.co.jp/picture)
