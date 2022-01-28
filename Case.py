@@ -18,4 +18,4 @@ for case in jsn.values():
     datalist.append([number,title,explain])
 
 df=pd.DataFrame(datalist,columns=["number","title","explain"])
-df.to_csv('dataset_csv/Number-Title-Explain.csv',encoding='utf-8') 
+df.to_csv('dataset_csv/Number-Title-Explain.csv',encoding='utf-8',index=None) 
