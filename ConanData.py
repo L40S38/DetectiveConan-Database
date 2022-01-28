@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from func import * 
+from Mainfunc import * 
 import json
 import codecs
 

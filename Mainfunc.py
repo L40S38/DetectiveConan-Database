@@ -1,6 +1,5 @@
 import requests 
 import bs4 
-import re
 
 def get_soup(url):
     res = requests.get(url)
@@ -23,7 +22,7 @@ def remove_unneslet(s):
 """
 def remove_unneslet(s):
     #print(s)
-    s = s.replace('\n\n','').replace('\r\n','').replace(' ','').replace('\n','').replace('\u7c31','').replace('\U00020bb7','').replace('\u2661','').replace('\U000e0100','')
+    s = s.replace('\n\n','').replace('\r\n','').replace(' ','').replace('\n','').replace('\u7c31','').replace('\U00020bb7','').replace('\u2661','').replace('\U000e0100','').replace('\u3000','')
     return s
 
 def get_title(case_detail):
@@ -39,7 +38,10 @@ def get_files(case_detail):
         #print(file.get_text())  
         f=remove_unneslet(file.get_text())
         file_idx = f.find('「')
-        rtu.append({'File Index':f[:file_idx],'File Title':f[file_idx:]})
+        title = f[file_idx:]
+        volume = f[1:f.find('巻')]
+        index = f[file_idx-1]
+        rtu.append({'Volume':volume,'Index':index,'Title':title})
     return rtu 
 
 def get_mchara(case_detail):
