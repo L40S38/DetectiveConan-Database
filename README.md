@@ -1,6 +1,6 @@
 2022/1/28 更新
 # CaseClosed-Database
-[名探偵コナン編纂室](https://websunday.net/conandb/)のページからBeautifulSoupを使って登場キャラなどのデータを取得するコード(python)※画像を除く
+[名探偵コナン編纂室](https://websunday.net/conandb/)のページからBeautifulSoup4を使って登場キャラなどのデータを取得するコード(python)※画像を除く
 Windows11にて動作確認済
 
 # 利用に関する注意
