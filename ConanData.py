@@ -1,20 +1,12 @@
 # -*- coding: utf-8 -*-
+from func import get_soup
+from func import rename_url
 
 import attr
 import requests 
 import bs4 
 import pandas as pd
 import codecs
-
-def get_soup(url):
-    res = requests.get(url)
-    res.raise_for_status() #エラーチェック
-
-    soup = bs4.BeautifulSoup(res.text,"lxml")
-    return soup
-
-def rename_url(url):
-    return 'https://websunday.net/' + url
 
 url = 'https://websunday.net/conandb/comics-list/' 
 
@@ -25,6 +17,7 @@ soup = get_soup(url)
 ul = soup.find("ul",attrs={"class","cover"})
 volumes = ul.find_all("li")
 print(volumes)
+case_number=0
 for volume in volumes:
     p = volume.find("p").get_text()
     print(p)
@@ -34,6 +27,8 @@ for volume in volumes:
     case_list = text.find_all("tr")
     for case_tr in case_list:
         case = case_tr.find_all("td")
+        if case_number == int(case[0].get_text()):
+            continue
         case_number = int(case[0].get_text())
         case_url = rename_url(case[1].find("a").get("href"))
         print(f'case_number:{case_number}')
