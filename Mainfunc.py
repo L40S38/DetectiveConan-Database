@@ -59,6 +59,8 @@ def get_venue(case_detail):
     case_venue = remove_unneslet(case_venue)
     if '／' in case_venue:
         case_venue = case_venue.split('／')
+    else:
+        case_venue = [case_venue]    
     return case_venue  
 
 def get_gchara(case_detail):

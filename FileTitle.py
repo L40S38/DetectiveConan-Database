@@ -14,8 +14,8 @@ for case in jsn.values():
     #print(case)
     files=case["Files"]
     for f in files:
-        datalist.append([count,f['Volume'],f['Index'],f['Title']])
+        datalist.append([count,f['Volume'],f['Index'],case['Title'],f['Title']])
         count+=1
 
-df=pd.DataFrame(datalist,columns=["number","volume","index","title"])
-df.to_csv('dataset_csv/Volume-Index-Title.csv',encoding='utf-8',index=None)        
+df=pd.DataFrame(datalist,columns=["number","volume","index","case","title"])
+df.to_csv('dataset_csv/Volume-Index-Title-Case.csv',encoding='utf-8',index=None)        

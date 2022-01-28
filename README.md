@@ -27,8 +27,8 @@ python ConanData.py
 
 # FileTitle.py
 
-各話の通算話数（-1）、掲載巻数、File番号、タイトルのデータセットVolume-Index-Title.csvを取得できます。
+各話の通算話数、掲載巻数、File番号、事件名、タイトルのデータセットVolume-Index-Title.csvを取得できます。
 
 # Case.py
 
-各事件の通算事件数（-1）、タイトル、説明文が読めます。
+各事件の通算事件数、事件数、説明文が読めます。
