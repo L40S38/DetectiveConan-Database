@@ -1,5 +1,5 @@
 2022/1/28 更新
-# CaseClosed-Database
+# DetectiveConan-Database
 [名探偵コナン編纂室](https://websunday.net/conandb/)のページからBeautifulSoup4を使って登場キャラなどのデータを取得するコード(python)※画像を除く
 Windows11にて動作確認済
 
