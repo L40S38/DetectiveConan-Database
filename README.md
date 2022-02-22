@@ -1,4 +1,4 @@
-2022/1/28 更新
+2022/2/22 更新
 # DetectiveConan-Database
 [名探偵コナン編纂室](https://websunday.net/conandb/)のページからBeautifulSoup4を使って登場キャラなどのデータを取得するコード(python)※画像を除く
 Windows11にて動作確認済
@@ -42,3 +42,10 @@ Title-MainCharacter.csvとTitle-GuestCharacter.csvが取得できます。
 # Place.py
 
 事件が起こった場所のデータセットTitle-Place.csvが取得できます。
+
+# ConanData.pyと上5ファイルを一気に実行する方法
+
+以下のコマンドを実行してください。
+```sh
+.\all.bat
+```
