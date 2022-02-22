@@ -40,7 +40,7 @@ def get_files(case_detail):
         file_idx = f.find('「')
         title = f[file_idx:]
         volume = f[1:f.find('巻')]
-        index = f[file_idx-1]
+        index = f[f.find('File')+4:file_idx]
         rtu.append({'Volume':volume,'Index':index,'Title':title})
     return rtu 
 
