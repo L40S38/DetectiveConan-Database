@@ -37,10 +37,12 @@ def get_files(case_detail):
     for file in case_files:
         #print(file.get_text())  
         f=remove_unneslet(file.get_text())
+        #print(f)
         file_idx = f.find('「')
+        file_volume = f.find('巻')
         title = f[file_idx:]
-        volume = f[1:f.find('巻')]
-        index = f[f.find('File')+4:file_idx]
+        volume = f[1:file_volume]
+        index = f[file_volume+6:file_idx]
         rtu.append({'Volume':volume,'Index':index,'Title':title})
     return rtu 
 
