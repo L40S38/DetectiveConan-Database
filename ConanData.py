@@ -50,6 +50,6 @@ for volume in volumes:
 #updatedetail = soup.find_all("div",attrs={"class","livedetail"})
 #print(dataset)
 fw = codecs.open('ConanData.json', 'w','utf-8') 
-json.dump(dataset, fw, ensure_ascii=False)
+json.dump(dataset, fw, ensure_ascii=False, indent='\t')
 fw.close()
 print("**output completed**")

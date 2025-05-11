@@ -14,7 +14,7 @@ Windows11にて動作確認済
 
 ・このレポジトリをgit cloneするもしくはzipファイルをダウンロードして解凍
 
-・BeautifulSoupなど未インストールのパッケージがあればそれもインストールする
+・BeautifulSoup、requests, pandasなど未インストールのパッケージがあればそれもインストールする
 
 ・このレポジトリのルートディレクトリでConanData.pyを実行
 
