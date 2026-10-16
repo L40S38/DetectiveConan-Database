@@ -1,5 +1,6 @@
-import requests 
-import bs4 
+import re
+import requests
+import bs4
 
 def get_soup(url):
     res = requests.get(url)
@@ -58,12 +59,14 @@ def get_mchara(case_detail):
 
 def get_venue(case_detail):
     case_venue = case_detail.find("div",attrs={"class","venue"}).find("p").get_text()
-    case_venue = remove_unneslet(case_venue)
+    #場所の区切りは古いページでは「／」、新しいページでは半角スペース
     if '／' in case_venue:
         case_venue = case_venue.split('／')
     else:
-        case_venue = [case_venue]    
-    return case_venue  
+        #「Cafe Royal」のように英字の間にあるスペースは名前の一部なので区切らない
+        case_venue = re.split(r'(?<![A-Za-zÀ-ɏ]) | (?![A-Za-zÀ-ɏ])', ' '.join(case_venue.split()))
+    case_venue = [remove_unneslet(v) for v in case_venue]
+    return [v for v in case_venue if v]
 
 def get_gchara(case_detail):
     case_gchara = case_detail.find("div",attrs={"class","gchara"}).find("p").get_text()
