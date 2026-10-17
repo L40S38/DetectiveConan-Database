@@ -1,4 +1,5 @@
 python ConanData.py
+python PatchData.py
 python Case.py
 python FileTitle.py
 python GuestCharacter.py

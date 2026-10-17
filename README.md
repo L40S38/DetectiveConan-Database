@@ -43,7 +43,23 @@ Title-MainCharacter.csvとTitle-GuestCharacter.csvが取得できます。
 
 事件が起こった場所のデータセットTitle-Place.csvが取得できます。
 
-# ConanData.pyと上5ファイルを一気に実行する方法
+# PatchData.py
+
+編纂室のページそのものの誤り（事件の境目の誤りなど）を、patches.jsonに従ってConanData.json上で直します。
+
+ConanData.pyの後、上5ファイルの前に実行してください（all.batはこの順で実行します）。何度実行しても結果は同じです。
+
+直す対象が見つからないパッチは「直す対象が無い（適用済みか、編纂室側で直った）」と表示されます。編纂室側で直ったものはpatches.jsonから消してください。
+
+patches.jsonの1件は、id・case（事件名）・op・reason（直す理由と確かめた日）と、opごとの項目で書きます。
+
+- remove_file：事件から話を外す（volume・index）。2つの事件に重なって載っている話に使う
+- add_main／add_guest：メイン・ゲストキャラを足す（name。afterに人物名を書くとその後ろ、beforeならその前に入れる）
+- rename_guest：ゲストキャラの呼び名を、編纂室がほかの事件で使っている名前にそろえる（from・to）
+
+noteに消す時期などの注意書き（単行本の発売前の暫定パッチなど）を書くと、実行のたびに表示されます。
+
+# ConanData.pyとPatchData.pyと上5ファイルを一気に実行する方法
 
 以下のコマンドを実行してください。
 ```sh
