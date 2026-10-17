@@ -47,6 +47,14 @@ def add_chara(key):
         return True
     return add
 
+def rename_title(case, patch):
+    #話タイトルの誤りを直す。巻と巻内の話番号が一致する話のタイトルが from のときだけ to にする
+    for f in case['Files']:
+        if f['Volume'] == patch['volume'] and f['Index'] == patch['index'] and f['Title'] == patch['from']:
+            f['Title'] = patch['to']
+            return True
+    return False
+
 def rename_chara(key):
     #同じ人物の呼び名を、編纂室がほかの事件で使っている名前にそろえる
     def rename(case, patch):
@@ -59,6 +67,7 @@ def rename_chara(key):
 
 ops = {
     'remove_file': remove_file,
+    'rename_title': rename_title,
     'add_main': add_chara('Main Characters'),
     'add_guest': add_chara('Guest Characters'),
     'rename_guest': rename_chara('Guest Characters'),

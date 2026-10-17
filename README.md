@@ -54,6 +54,7 @@ ConanData.pyの後、上5ファイルの前に実行してください（all.bat
 patches.jsonの1件は、id・case（事件名）・op・reason（直す理由と確かめた日）と、opごとの項目で書きます。
 
 - remove_file：事件から話を外す（volume・index）。2つの事件に重なって載っている話に使う
+- rename_title：話タイトルの誤りを直す（volume・index・from・to。from・toは「」も含めてConanData.jsonの表記のまま書く）
 - add_main／add_guest：メイン・ゲストキャラを足す（name。afterに人物名を書くとその後ろ、beforeならその前に入れる）
 - rename_guest：ゲストキャラの呼び名を、編纂室がほかの事件で使っている名前にそろえる（from・to）
 
