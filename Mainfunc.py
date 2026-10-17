@@ -23,7 +23,9 @@ def remove_unneslet(s):
 """
 def remove_unneslet(s):
     #print(s)
-    s = s.replace('\n\n','').replace('\r\n','').replace(' ','').replace('\n','').replace('\u7c31','').replace('\U00020bb7','').replace('\u2661','').replace('\U000e0100','').replace('\u3000','')
+    s = s.replace('\n\n','').replace('\r\n','').replace(' ','').replace('\n','').replace('\u3000','')
+    #異体字セレクタ（「芦沢」の「芦」の字形の指定など）は、名前で検索できるように外す。簱・𠮷・♡などの字は表記の一部なので外さない
+    s = re.sub('[\ufe00-\ufe0f\U000e0100-\U000e01ef]','',s)
     return s
 
 def get_title(case_detail):
