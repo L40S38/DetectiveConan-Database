@@ -57,6 +57,7 @@ patches.jsonの1件は、id・case（事件名）・op・reason（直す理由�
 - rename_title：話タイトルの誤りを直す（volume・index・from・to。from・toは「」も含めてConanData.jsonの表記のまま書く）
 - add_main／add_guest：メイン・ゲストキャラを足す（name。afterに人物名を書くとその後ろ、beforeならその前に入れる）
 - rename_guest：ゲストキャラの呼び名を、編纂室がほかの事件で使っている名前にそろえる（from・to）
+- remove_main／remove_guest：編纂室の一覧にあるが原作に出ない人物を外す（name）
 
 noteに消す時期などの注意書き（単行本の発売前の暫定パッチなど）を書くと、実行のたびに表示されます。
 

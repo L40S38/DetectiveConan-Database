@@ -65,12 +65,24 @@ def rename_chara(key):
         return True
     return rename
 
+def remove_chara(key):
+    #編纂室の一覧にあるが原作に出ない人物を外す
+    def remove(case, patch):
+        charas = case[key]
+        if patch['name'] not in charas:
+            return False
+        charas.remove(patch['name'])
+        return True
+    return remove
+
 ops = {
     'remove_file': remove_file,
     'rename_title': rename_title,
     'add_main': add_chara('Main Characters'),
     'add_guest': add_chara('Guest Characters'),
     'rename_guest': rename_chara('Guest Characters'),
+    'remove_main': remove_chara('Main Characters'),
+    'remove_guest': remove_chara('Guest Characters'),
 }
 
 for patch in patches:
